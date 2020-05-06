@@ -1,0 +1,151 @@
+    <project>
+      <modelVersion>4.0.0</modelVersion>
+      <groupId>com.mfservices.deepwork</groupId>
+      <artifactId>mfs-deepwork-backend</artifactId>
+      <version>1</version>
+
+      <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <influxdb.version>2.18</influxdb.version>
+      </properties>
+
+      <repositories>
+        <repository>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>https://repo.maven.apache.org/maven2</url>
+          <layout>default</layout>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+     
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>https://repo.maven.apache.org/maven2</url>
+          <layout>default</layout>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <releases>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </pluginRepository>
+      </pluginRepositories>
+     
+      <build>
+        <directory>${project.basedir}/target</directory>
+        <outputDirectory>${project.build.directory}/classes</outputDirectory>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
+        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/main/test/java</testSourceDirectory>
+
+        <resources>
+          <resource>
+            <directory>${project.basedir}/src/main/resources</directory>
+          </resource>
+        </resources>
+
+        <testResources>
+          <testResource>
+            <directory>${project.basedir}/src/test/resources</directory>
+          </testResource>
+        </testResources>
+
+        <plugins>
+          <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+              <executable>true</executable>
+            </configuration>
+          </plugin>
+
+          <plugin> <!-- Need this to repackage the executable jar so that Spring can boot correctly... -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>2.2.6.RELEASE</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>repackage</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+
+      <reporting>
+        <outputDirectory>${project.build.directory}/site</outputDirectory>
+      </reporting>
+
+      <dependencies>
+
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+          <version>2.2.6.RELEASE</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-security</artifactId>
+          <version>2.2.6.RELEASE</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-jpa</artifactId>
+          <version>2.2.7.RELEASE</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.influxdb</groupId>
+          <artifactId>influxdb-java</artifactId>
+          <version>${influxdb.version}</version>
+        </dependency>
+
+        <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+          <groupId>com.auth0</groupId>
+          <artifactId>java-jwt</artifactId>
+          <version>3.10.2</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.eclipse.persistence</groupId>
+          <artifactId>javax.persistence</artifactId>
+          <version>2.2.1</version>
+        </dependency>
+
+        <dependency>
+          <groupId>de.dentrassi.crypto</groupId>
+          <artifactId>pem-keystore</artifactId>
+          <version>2.0.0</version>
+        </dependency>
+
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.13</version>
+          <scope>test</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-all</artifactId>
+          <version>1.10.19</version>
+          <scope>test</scope>
+        </dependency>
+
+      </dependencies>
+    </project>

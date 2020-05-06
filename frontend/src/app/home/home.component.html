@@ -1,0 +1,8 @@
+﻿<h1>DeepWork</h1>
+<p>Log what activity you're engaged in at the moment</p>
+<ul>
+    <li *ngFor="let activity of activities">
+        <button id={{activity.id}} [className]="activity.isInProgress() ? 'btn activity btn-success' : 'btn activity btn-primary' " (click)="toggleActivity($event)"> {{activity.name}} {{activity.status}}</button>
+    </li>
+</ul>
+<p><a [routerLink]="['/login']">Logout</a></p>

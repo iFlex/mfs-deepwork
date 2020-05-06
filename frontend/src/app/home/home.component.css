@@ -1,0 +1,19 @@
+.activity {
+    width: 80%;
+    min-height:64px;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.in-progress {
+    
+}
+
+.untouched {
+
+}
+
+.finished {
+
+}

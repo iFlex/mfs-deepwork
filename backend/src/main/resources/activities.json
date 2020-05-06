@@ -1,0 +1,44 @@
+{
+  "activities":[
+    {
+      "id": "gaming_1",
+      "name": "video_games"
+    },
+    {
+      "id": "reading_1",
+      "name": "reading"
+    },
+    {
+      "id": "programming_1",
+      "name": "programming"
+    },
+    {
+      "id": "cooking_1",
+      "name": "cooking"
+    },
+    {
+      "id": "socialising_1",
+      "name": "socialising"
+    },
+    {
+      "id": "socialising_2",
+      "name": "video_conf"
+    },
+    {
+      "id": "commuting_1",
+      "name": "commuting"
+    },
+    {
+      "id": "work_1",
+      "name": "work"
+    },
+    {
+      "id": "eating_1",
+      "name": "eating"
+    },
+    {
+      "id": "shopping_1",
+      "name": "shopping"
+    }
+  ]
+}
